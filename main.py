@@ -94,3 +94,10 @@ with open(result_path, 'w') as f:
 # 发送邮件，通知用户
 send_mails(result_path)
 print('邮件已发送完毕')
+
+# 阿里云服务器和其他部分国内服务器可能会拦截邮件发(防止用来发送垃圾邮件),如果遇到该情况,请注释上面的内容,并使用下面的代码
+
+file temp=open(log, mode='+')
+temp.write("\n----------------------------\n当前时间为:"+time.asctime( time.localtime(time.time()) )+"\n已打卡成功\n----------------------------\n")
+temp.close()
+
